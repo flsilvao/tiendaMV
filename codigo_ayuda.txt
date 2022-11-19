@@ -1,0 +1,68 @@
+                      <!-- area de popup-->
+                      <p><a href="#popup">Ver configuración</a></p>
+                      <div id="popup" class="overlay">
+                        <div id="popupBody">
+                          <h2>Configuración del equipo</h2>
+                          <a id="cerrar" href="#">&times;</a>
+                          <div class="popupContent">
+                            <ul>
+                              <li>Procesador: Intel Core i3-8100 3.6 GHz, 4 Núcleos, 6 MB Caché</li>
+                              <li>Mainboard: H310 Gigabyte </li>
+                              <li>Memoria RAM: 8 GB DDR4-2666Mhz Ampliable</li>
+                              <li>Disco Solido: SSD 256GB </li>
+                              <li>Gráficos Integrados Intel UHD 630 </li>
+                              <li>Case Mid Tower + Fuente 350W </li>
+                              <li>Teclado y Mouse USB </li>
+                              <li>La vida digital al alcance de tus manos, el equipo perfecto para abordar las tareas de colegio, teletrabajo y tambien para las de tiempo libre, socaliza y visualiza videos en tu plataforma favorita.</li>
+                              </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- aqui termina el area del popup-->
+
+
+/* Popup de equipos 
+clase overlay que hará el efecto modal. El truco consiste en poner fija la posición de la capa 
+y sus 4 direcciones en 0. La propiedad visibility estará en hidden. La opacidad será 0 inicialmente, 
+haciendo una simple transición de medio segundo.
+*/
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/*
+la pseudo clase target que funciona cuando un elemento está activo, como en este caso la clase overlay. 
+Lo que haremos será simplemente poner la propiedad visibility en visible, y regresar la opacidad en 1.
+*/
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+#popupBody{
+  width: 46%;
+  padding: 2%;
+  border-radius: 15px;
+  box-shadow: 0 0 5px #CCC;
+  background: #FFF;
+  position: relative;
+  transition: all 5s ease-in-out;
+  margin: 20% auto;    
+}
+#cerrar{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #F00;
+}
